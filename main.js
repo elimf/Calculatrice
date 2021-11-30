@@ -1,36 +1,24 @@
-function ajouter(nb1, nb2) {
+let input = "";
+//peremt de saisir dans quickmath
+function ShowValue(btn) {
+  input += btn.value;
 
-    return nb1+nb2;
+  console.log(input);
+  document.getElementById("output").innerHTML = input;
 }
-function soustraire(nb1, nb2 ) {
-    return nb1-nb2;
+//Fait le calcul et envoie dans quickmath
+function quickMath() {
+  console.log(eval(input));
+  document.getElementById("output").innerHTML = eval(input);
 }
-function multiplier(nb1, nb2) {
-    return nb1*nb2;
+//Reset
+function Reset(btn) {
+  document.getElementById("output").innerHTML = "0";
+  input = "";
 }
-function diviser(nb1, nb2 ){
-    return nb1/nb2;
-}
-function operate(op, nb1, nb2) {
-    var result;
-    switch (op) {
-      case "+":
-        result = ajouter(nb1, nb2);
-        break;
-      case "-":
-        result = soustraire(nb1, nb2);
-        break;
-      case "*":
-        result = multiplier(nb1, nb2);
-        break;
-      case "/":
-        result = diviser(nb1, nb2);
-        break;
-
-      default:
-         console.log("error");
-        break;
-    }
-    
-return result;
+//rem
+function rem1(btn) {
+  input = input.replace(input.slice(-1), "");
+  console.log(input);
+  document.getElementById("output").innerHTML = input;
 }

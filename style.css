@@ -1,0 +1,47 @@
+.total {
+  width: 45%;
+  height: 660px;
+  border: 2px solid black;
+  border-radius: 50px;
+  background-color: #51dcd5;
+}
+
+input {
+  font-size: 50px;
+  font-family: Verdana,Tahoma, sans-serif;
+  width: 150px;
+  height: 100px;
+  border-radius: 25px;
+}
+
+input:hover {
+  background: #64dc51;
+  transition: 0.2s;
+  box-shadow: 3px 3px white;
+}
+#output {
+  margin: 0 auto;
+  width: 500px;
+  background: white;
+  text-align: center;
+  margin-top: 50px;
+  height: 75px;
+  font-size: 40px;
+  font-family: "Lato", sans-serif;
+  border-radius: 25px;
+  margin-bottom: 5px;
+}
+#superconteneur {
+  border-radius: 25px;
+  margin: 0 auto;
+  height: 500px;
+  width: 600px;
+}
+
+#conteneur {
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+}
