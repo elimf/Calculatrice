@@ -5,53 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculatrice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div class="total" > 
-      <div id="output">...</div>
-      <div id="superconteneur">
-        <div id="conteneur">
-          <div><input type="button" value="AC" onclick="Reset(this)" /></div>
-
-          <div><input type="button" value="CE" onclick="rem1(this)" /></div>
-
-          <div><input type="button" value="%" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="/" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="7" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="8" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="9" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="*" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="4" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="5" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="6" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="-" onclick="ShowValue(this)" /></div>
-
-          <div>
-            <input type="button" value="1" onclick="ShowValue(this)" />
+  <div class="glowing">
+    
+    <span style="--i:1;"></span>
+    
+    <span style="--i:2;"></span>
+    
+    <span style="--i:3;"></span>
+    
+  </div>
+  
+  <div class="glowing">
+    
+    <span style="--i:1;"></span>
+    
+    <span style="--i:2;"></span>
+    
+    <span style="--i:3;"></span>
+    
+  </div>
+  
+  <div class="glowing">
+    
+    <span style="--i:1;"></span>
+    
+    <span style="--i:2;"></span>
+    
+    <span style="--i:3;"></span>
+    
+  </div>
+  
+  <div class="glowing">
+    
+    <span style="--i:1;"></span>
+    
+    <span style="--i:2;"></span>
+    
+    <span style="--i:3;"></span>
+    
+  </div>
+    <div class="container">
+      <div class="total">
+        <div id="output">...</div>
+        <div id="superconteneur">
+          <div id="conteneur">
+            <!-- PREMIERE LIGNE -->
+            <div class="row">
+              <div class="col-3"><input type="button" value="AC" onclick="Reset(this)" /></div>
+              <div class="col-3"><input type="button" value="CE" onclick="rem1(this)" /></div>
+              <div class="col-3"><input type="button" value="%" onclick="ShowValue(this)" /></div>
+              <div class="col-3"> <input type="button" value="/" onclick="ShowValue(this)" /></div>
+            </div>
+             <!-- DEUXIÈME LIGNE -->
+            <div class="row">
+              <div class="col-3"><input type="button" value="7" onclick="ShowValue(this)" /></div>
+              <div class="col-3"> <input type="button" value="8" onclick="ShowValue(this)" /></div>
+              <div class="col-3"> <input type="button" value="9" onclick="ShowValue(this)" /></div>
+              <div class="col-3">  <input type="button" value="*" onclick="ShowValue(this)" /></div>
+            </div>
+             <!-- TROISIÈME LIGNE -->
+            <div class="row">
+              <div class="col-3"> <input type="button" value="4" onclick="ShowValue(this)" /></div>
+              <div class="col-3">  <input type="button" value="5" onclick="ShowValue(this)" /></div>
+              <div class="col-3">   <input type="button" value="6" onclick="ShowValue(this)" /></div>
+              <div class="col-3">   <input type="button" value="-" onclick="ShowValue(this)" /></div>
+            </div>
+             <!-- QUATIRÈME LIGNE -->
+            <div class="row">
+              <div class="col-3">   <input type="button" value="1" onclick="ShowValue(this)" /></div>
+              <div class="col-3">   <input type="button" value="2" onclick="ShowValue(this)" /></div>
+              <div class="col-3">   <input type="button" value="3" onclick="ShowValue(this)" /></div>
+              <div class="col-3">    <input type="button" value="=" onclick="quickMath(this)" /></div>
+            </div>
+             <!-- CINQUIÈME LIGNE -->
+            <div class="row">
+              <div class="col-3">   <input type="button" value="+" onclick="ShowValue(this)" /></div>
+              <div class="col-3">    <input type="button" value="0" onclick="ShowValue(this)" /></div>
+              <div class="col-3">    <input type="button" value="." onclick="ShowValue(this)" /></div>
+           
+            </div>
           </div>
-
-          <div><input type="button" value="2" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="3" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="+" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="0" onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="." onclick="ShowValue(this)" /></div>
-
-          <div><input type="button" value="=" onclick="quickMath(this)" /></div>
         </div>
       </div>
     </div>
