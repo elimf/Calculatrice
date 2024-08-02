@@ -1,173 +1,76 @@
-
+/* Réinitialisation des marges et des espacements */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Style du corps de la page */
 body {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: #000;
+  background: #f5f5f5;
+}
+
+/* Conteneur principal de la calculatrice */
+.calculator {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
-.glowing {
-  position: relative;
-  min-width: 700px;
-  height: 550px;
-  margin: -150px;
-  transform-origin: right;
-  animation: colorChange 5s linear infinite;
-}
-
-.glowing:nth-child(even) {
-  transform-origin: left;
-}
-
-@keyframes colorChange {
-  0% {
-    filter: hue-rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-.glowing span {
-  position: absolute;
-  top: calc(80px * var(--i));
-  left: calc(80px * var(--i));
-  bottom: calc(80px * var(--i));
-  right: calc(80px * var(--i));
-}
-
-.glowing span::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -8px;
-  width: 15px;
-  height: 15px;
-  background: #f00;
-  border-radius: 50%;
-}
-
-.glowing span:nth-child(3n + 1)::before {
-  background: rgba(134,255,0,1);
-  box-shadow: 0 0 20px rgba(134,255,0,1),
-    0 0 40px rgba(134,255,0,1),
-    0 0 60px rgba(134,255,0,1),
-    0 0 80px rgba(134,255,0,1),
-    0 0 0 8px rgba(134,255,0,.1);
-}
-
-.glowing span:nth-child(3n + 2)::before {
-  background: rgba(255,214,0,1);
-  box-shadow: 0 0 20px rgba(255,214,0,1),
-    0 0 40px rgba(255,214,0,1),
-    0 0 60px rgba(255,214,0,1),
-    0 0 80px rgba(255,214,0,1),
-    0 0 0 8px rgba(255,214,0,.1);
-}
-
-.glowing span:nth-child(3n + 3)::before {
-  background: rgba(0,226,255,1);
-  box-shadow: 0 0 20px rgba(0,226,255,1),
-    0 0 40px rgba(0,226,255,1),
-    0 0 60px rgba(0,226,255,1),
-    0 0 80px rgba(0,226,255,1),
-    0 0 0 8px rgba(0,226,255,.1);
-}
-
-.glowing span:nth-child(3n + 1) {
-  animation: animate 10s alternate infinite;
-}
-
-.glowing span:nth-child(3n + 2) {
-  animation: animate-reverse 3s alternate infinite;
-}
-
-.glowing span:nth-child(3n + 3) {
-  animation: animate 8s alternate infinite; 
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(180deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-reverse {
-  0% {
-    transform: rotate(360deg);
-  }
-  
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.total {
-  border: 2px solid black;
-  border-radius: 50px;
-  background-color: #51dcd55e;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: absolute;
-}
-
-input {
-  font-size: 1rem;
-  font-family: Verdana, Tahoma, sans-serif;
-  width: 110px;
-  border-radius: 25px;
-}
-
-input:hover {
-  background: #64dc51;
-  transition: 0.2s;
-  box-shadow: 3px 3px white;
-}
+/* Affichage des résultats */
 #output {
-  margin: 0 auto;
-  width: 500px;
-  background: white;
-  text-align: center;
-  margin-top: 50px;
-  font-size: 40px;
-  font-family: "Lato", sans-serif;
-  border-radius: 25px;
-  margin-bottom: 5px;
-}
-#superconteneur {
-  border-radius: 25px;
-  margin: 0 auto;
+  background: #333;
+  color: #fff;
+  font-size: 2rem;
+  text-align: right;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
 }
 
-#conteneur {
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  margin: 5%;
-  display: flex;
-  flex-direction: column;
+/* Conteneur des boutons */
+#button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Style des boutons */
+button {
+  font-size: 1.2rem;
+  border: none;
+  background: #f0f0f0;
+  color: #333;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Style des boutons principaux */
+button.btn-primary {
+  background: #ff9500;
+  color: #fff;
+}
+
+button.btn-primary:hover {
+  background: #e68900;
+}
+
+/* Style des boutons secondaires */
+button.btn-secondary {
+  background: #f0f0f0;
+}
+
+button.btn-secondary:hover {
+  background: #ddd;
+}
+
+/* Effet d'ombre au survol */
+button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
